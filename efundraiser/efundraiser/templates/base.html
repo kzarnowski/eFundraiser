@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eFundraiser</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href={% static 'css/style.css' %}>
+    
+  </head>
+  <body>
+    <div id="navbar">
+        {% block navbar %}
+            Navbar
+        {% endblock navbar %}
+    </div>
+    <div id="page_title">
+        {% block page_title %}
+            Title
+        {% endblock page_title %}
+    </div>
+  </body>
+</html>
