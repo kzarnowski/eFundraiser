@@ -11,4 +11,4 @@ class Fundraiser(models.Model):
     amount_to_raise = models.FloatField()
     amount_raised = models.FloatField()
     # user can't delete account when having open fundraisers
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    # user = models.ForeignKey(User, on_delete=models.PROTECT)
