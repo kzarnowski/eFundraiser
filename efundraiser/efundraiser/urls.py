@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.views.generic.base import TemplateView
+from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fundraisers/', include('fundraisers.urls'))
+    path('fundraisers/', include('fundraisers.urls')),
+    path('account/', include('authentication.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home')
 ]

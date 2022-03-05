@@ -6,4 +6,19 @@
 
 {% block content %}
     This is fundraisers page haha
+
+    {% if fundraisers %}
+        <ul>
+        {% for fundraiser in fundraisers %}
+            <li><a href="{% url 'fundraisers:detail' fundraiser.id%}">
+                {{ fundraiser.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No active fundraisers.</p>
+    {% endif %}
+    <form action="{% url 'fundraisers:create' %}" method="get">
+        <button>Create new</button>
+    </form>
+
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    {{ fundraiser.title }}
+{% endblock %}
+
+{% block content %}
+    <ul>
+        <li>Amount: {{ fundraiser.amount_raised }} / {{ fundraiser.amount_to_raise }}</li>
+        <li>Created at: {{ fundraiser.start_time }}</li>
+        <li>Ends at: {{ fundraiser.end_time }}</li>
+    </ul>
+    <hr>
+    <p>
+        {{ fundraiser.description }}
+    </p>
+    <form method="get" action="{% url 'fundraisers:delete' fundraiser.id %}">
+    <button>Delete</button>
+    </form>
+    <br>
+    <form method="get" action="{% url 'fundraisers:edit' fundraiser.id %}">
+    <button>Edit</button>
+    </form>
+
+{% endblock %}

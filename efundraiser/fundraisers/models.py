@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 class Fundraiser(models.Model):
     title = models.CharField(max_length=20)
     description = models.CharField(max_length=2000)
-    # thumbnail = models.ImageField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     amount_to_raise = models.FloatField()
